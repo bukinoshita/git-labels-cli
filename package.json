@@ -1,0 +1,17 @@
+{
+  "name": "git-labels-cli",
+  "version": "0.0.0",
+  "description": "Creating Github issue labels",
+  "main": "index.js",
+  "repository": "https://github.com/bukinoshita/git-labels-cli.git",
+  "author": "Bu Kinoshita <bukinoshita@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^2.1.0",
+    "git-labels": "^0.0.1",
+    "inquirer": "^3.2.2",
+    "meow": "^3.7.0",
+    "shout-error": "^0.0.2",
+    "shout-success": "^0.0.2"
+  }
+}

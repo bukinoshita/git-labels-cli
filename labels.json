@@ -1,0 +1,8 @@
+[
+  { "name": "bug", "color": "#cb2431" },
+  { "name": "feature request", "color": "#28a745" },
+  { "name": "high priority", "color": "#0366d6" },
+  { "name": "version major", "color": "#5319e7" },
+  { "name": "version minor", "color": "#24292e" },
+  { "name": "version patch", "color": "#e36209" }
+]
