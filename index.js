@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 'use strict'
 
 const SaveLocal = require('save-local')
@@ -7,8 +8,10 @@ const shoutSuccess = require('shout-success')
 const shoutError = require('shout-error')
 const chalk = require('chalk')
 const inquirer = require('inquirer')
+const updateNotifier = require('update-notifier')
 
 const labels = require('./labels')
+
 const saveLocal = new SaveLocal('git-labels-store')
 
 const cli = meow(
@@ -36,29 +39,37 @@ const cli = meow(
   }
 )
 
-if (cli.flags.auth) {
-  return inquirer
-    .prompt([
-      {
-        message: 'Your access token',
-        name: 'token'
+updateNotifier({ pkg: cli.pkg }).notify()
+
+const run = () => {
+  if (cli.flags.auth) {
+    return inquirer
+      .prompt([
+        {
+          message: 'Your access token',
+          name: 'token'
+        }
+      ])
+      .then(({ token }) => saveLocal.set({ name: 'token', value: token }))
+  }
+
+  if (cli.input[0]) {
+    return saveLocal.get('token').then(token => {
+      if (!token) {
+        return shoutError(
+          `You don't have an access token. Please, create at https://github.com/settings/tokens/new and run ${chalk.bold(
+            '$ git-labels --auth'
+          )}.`
+        )
       }
-    ])
-    .then(({ token }) => saveLocal.set({ name: 'token', value: token }))
+
+      return gitLabels(cli.input[0], labels, token)
+        .then(() => shoutSuccess('Labels created!'))
+        .catch(err => shoutError(err))
+    })
+  }
+
+  cli.showHelp()
 }
 
-if (cli.input[0]) {
-  saveLocal.get('token').then(token => {
-    if (!token) {
-      shoutError(
-        `You don't have an access token. Please, create at https://github.com/settings/tokens/new and run ${chalk.bold(
-          '$ git-labels --auth'
-        )}.`
-      )
-    }
-
-    return gitLabels(cli.input[0], labels, token)
-      .then(() => shoutSuccess('Labels created!'))
-      .catch(err => shoutError(err))
-  })
-}
+run()

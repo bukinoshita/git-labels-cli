@@ -6,12 +6,38 @@
   "repository": "https://github.com/bukinoshita/git-labels-cli.git",
   "author": "Bu Kinoshita <bukinoshita@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "test": "xo --quiet"
+  },
+  "bin": {
+    "git-labels": "index.js"
+  },
+  "keywords": [
+    "labels",
+    "git",
+    "label",
+    "issue",
+    "issues",
+    "labels",
+    "github"
+  ],
   "dependencies": {
     "chalk": "^2.1.0",
     "git-labels": "^0.0.1",
     "inquirer": "^3.2.2",
     "meow": "^3.7.0",
+    "save-local": "^0.0.1",
     "shout-error": "^0.0.2",
-    "shout-success": "^0.0.2"
+    "shout-success": "^0.0.2",
+    "update-notifier": "^2.2.0"
+  },
+  "devDependencies": {
+    "eslint-config-prettier": "^2.3.0",
+    "xo": "^0.18.2"
+  },
+  "xo": {
+    "extends": [
+      "prettier"
+    ]
   }
 }
