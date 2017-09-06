@@ -751,9 +751,9 @@ gh-got@^6.0.0:
     got "^7.0.0"
     is-plain-obj "^1.1.0"
 
-git-labels@^0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/git-labels/-/git-labels-0.0.1.tgz#91c91ebfd64120b970769549619cca5089e1d034"
+git-labels@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/git-labels/-/git-labels-0.0.2.tgz#96436fc099b89e88a8894d6ad7fcba4ab9b0e609"
   dependencies:
     gh-got "^6.0.0"
     is-github-repo "^0.0.2"
