@@ -1,8 +1,50 @@
 [
-  { "name": "bug", "color": "cb2431" },
-  { "name": "feature request", "color": "28a745" },
-  { "name": "high priority", "color": "0366d6" },
-  { "name": "version major", "color": "5319e7" },
-  { "name": "version minor", "color": "24292e" },
-  { "name": "version patch", "color": "e36209" }
+  {
+    "name": "Priority: Critical",
+    "color": "EF3E36"
+  },
+  {
+    "name": "Priority: High",
+    "color": "6D72C3"
+  },
+  {
+    "name": "Priority: Medium",
+    "color": "FBCA04"
+  },
+  {
+    "name": "Priority: Low",
+    "color": "DBDAEA"
+  },
+  {
+    "name": "Status: Blocked",
+    "color": "5941A9"
+  },
+  {
+    "name": "Status: Complete",
+    "color": "17B890"
+  },
+  {
+    "name": "Status: In Progress",
+    "color": "E3655B"
+  },
+  {
+    "name": "Status: On Hold",
+    "color": "DDDDDD"
+  },
+  {
+    "name": "Type: Bug",
+    "color": "DB5461"
+  },
+  {
+    "name": "Type: Enhancement",
+    "color": "0052CC"
+  },
+  {
+    "name": "Type: Feature",
+    "color": "1A936F"
+  },
+  {
+    "name": "Type: Meta",
+    "color": "FAFAFA"
+  }
 ]

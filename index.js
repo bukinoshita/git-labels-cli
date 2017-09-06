@@ -54,19 +54,31 @@ const run = () => {
   }
 
   if (cli.input[0]) {
-    return saveLocal.get('token').then(token => {
-      if (!token) {
-        return shoutError(
-          `You don't have an access token. Please, create at https://github.com/settings/tokens/new and run ${chalk.bold(
-            '$ git-labels --auth'
-          )}.`
-        )
-      }
+    return saveLocal
+      .get('token')
+      .then(token => {
+        if (!token) {
+          return shoutError(
+            `You don't have an access token. Please, create at https://github.com/settings/tokens/new and run ${chalk.bold(
+              '$ git-labels --auth'
+            )}.`
+          )
+        }
 
-      return gitLabels(cli.input[0], labels, token)
-        .then(() => shoutSuccess('Labels created!'))
-        .catch(err => shoutError(err))
-    })
+        return gitLabels(cli.input[0], labels, token)
+          .then(res => {
+            if (res) {
+              return shoutError(`${res.statusCode} — ${res.statusMessage}.`)
+            }
+
+            shoutSuccess(
+              `Labels created. Check on https://github.com/${cli
+                .input[0]}/labels`
+            )
+          })
+          .catch(err => err)
+      })
+      .catch(err => shoutError(err))
   }
 
   cli.showHelp()
