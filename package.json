@@ -1,6 +1,6 @@
 {
   "name": "git-labels-cli",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Creating Github issue labels",
   "main": "index.js",
   "repository": "https://github.com/bukinoshita/git-labels-cli.git",
