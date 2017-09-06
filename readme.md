@@ -1,4 +1,4 @@
-# git-labels-cli
+# git-labels-cli [![Build Status](https://travis-ci.org/bukinoshita/git-labels-cli.svg?branch=master)](https://travis-ci.org/bukinoshita/git-labels-cli)
 
 > Creating Github issue labels
 
