@@ -25,6 +25,7 @@
     "chalk": "^2.1.0",
     "git-labels": "^0.0.2",
     "inquirer": "^3.2.2",
+    "load-json-file": "^3.0.0",
     "meow": "^3.7.0",
     "save-local": "^0.0.1",
     "shout-error": "^0.0.2",

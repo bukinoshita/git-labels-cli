@@ -13,20 +13,27 @@ $ npm install -g git-labels-cli
 ## Usage
 
 ```bash
-Usage:
-  $ git-labels <project-name>     create new labels to github project
-  $ git-labels --auth             github authentication
+$ git-labels --help
 
-Example:
-  $ save-me bukinoshita/git-labels
-  $ save-me --auth
+  Usage:
+    $ git-labels <project-name>           create new labels to github project
+    $ git-labels --auth                   github authentication
+    $ git-labels --file labels.json       import custom labels
 
-Options:
-  -a, --auth                      github authentication to be able to create labels
+  Example:
+    $ git-labels
+    $ git-labels bukinoshita/git-labels
+    $ git-labels --auth
+    $ git-labels --file labels.json
 
-  -h, --help                      Show help options
-  -v, --version                   Show version
+  Options:
+    -a, --auth                            github authentication to be able to create labels
+    -f, --file                            import custom labels
+    -h, --help                            show help options
+    -v, --version                         show version
 ```
+
+_Check the [API](https://github.com/bukinoshita/git-labels#api) in case you want to import custom labels_
 
 
 ## Related

@@ -9,6 +9,7 @@ const shoutError = require('shout-error')
 const chalk = require('chalk')
 const inquirer = require('inquirer')
 const updateNotifier = require('update-notifier')
+const loadJsonFile = require('load-json-file')
 
 const labels = require('./labels')
 
@@ -17,22 +18,26 @@ const saveLocal = new SaveLocal('git-labels-store')
 const cli = meow(
   `
   Usage:
-    $ git-labels <project-name>     create new labels to github project
-    $ git-labels --auth             github authentication
+    $ git-labels <project-name>           create new labels to github project
+    $ git-labels --auth                   github authentication
+    $ git-labels --file labels.json       import custom labels
 
   Example:
-    $ save-me bukinoshita/git-labels
-    $ save-me --auth
+    $ git-labels
+    $ git-labels bukinoshita/git-labels
+    $ git-labels --auth
+    $ git-labels --file labels.json
 
   Options:
-    -a, --auth                      github authentication to be able to create labels
-
-    -h, --help                      Show help options
-    -v, --version                   Show version
+    -a, --auth                            github authentication to be able to create labels
+    -f, --file                            import custom labels
+    -h, --help                            show help options
+    -v, --version                         show version
 `,
   {
     alias: {
       a: 'auth',
+      f: 'file',
       h: 'help',
       v: 'version'
     }
@@ -65,7 +70,11 @@ const run = () => {
           )
         }
 
-        return gitLabels(cli.input[0], labels, token)
+        const labelList = cli.flags.file
+          ? loadJsonFile.sync(cli.flags.file)
+          : labels
+
+        return gitLabels(cli.input[0], labelList, token)
           .then(res => {
             if (res) {
               return shoutError(`${res.statusCode} — ${res.statusMessage}.`)
