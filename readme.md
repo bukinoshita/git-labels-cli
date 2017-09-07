@@ -21,7 +21,6 @@ $ git-labels --help
     $ git-labels --file labels.json       import custom labels
 
   Example:
-    $ git-labels
     $ git-labels bukinoshita/git-labels
     $ git-labels --auth
     $ git-labels --file labels.json
