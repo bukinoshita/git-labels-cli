@@ -32,7 +32,10 @@ $ git-labels --help
     -v, --version                         show version
 ```
 
-_Check the [API](https://github.com/bukinoshita/git-labels#api) in case you want to import custom labels_
+
+## Demo
+
+<img src="demo.gif"/>
 
 
 ## Related
