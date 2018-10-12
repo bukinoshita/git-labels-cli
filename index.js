@@ -81,9 +81,9 @@ async function run() {
     } catch (error) {
       return shoutError(error)
     }
-
-    cli.showHelp()
   }
+
+  cli.showHelp()
 }
 
 run()
