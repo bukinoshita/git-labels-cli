@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-'use strict'
 
+// Packages
 const SaveLocal = require('save-local')
 const gitLabels = require('git-labels')
 const meow = require('meow')
@@ -10,8 +10,6 @@ const chalk = require('chalk')
 const inquirer = require('inquirer')
 const updateNotifier = require('update-notifier')
 const loadJsonFile = require('load-json-file')
-
-const labels = require('./labels')
 
 const saveLocal = new SaveLocal('git-labels-store')
 
@@ -45,48 +43,44 @@ const cli = meow(
 
 updateNotifier({ pkg: cli.pkg }).notify()
 
-const run = () => {
-  if (cli.flags.auth) {
-    return inquirer
-      .prompt([
-        {
-          message: 'Your access token',
-          name: 'token'
-        }
-      ])
-      .then(({ token }) => saveLocal.set({ name: 'token', value: token }))
+async function run() {
+  const { flags, input } = cli
+
+  if (flags.auth) {
+    const { token } = await inquirer.prompt([
+      {
+        message: 'Your access token',
+        name: 'token'
+      }
+    ])
+
+    return saveLocal.set({ name: 'token', value: token })
   }
 
-  if (cli.input[0]) {
-    return saveLocal
-      .get('token')
-      .then(token => {
-        if (!token) {
-          return shoutError(
-            `You don't have an access token. Please, create at https://github.com/settings/tokens/new and run ${chalk.bold(
-              '$ git-labels --auth'
-            )}.`
-          )
-        }
+  const project = input[0]
 
-        const labelList = cli.flags.file
-          ? loadJsonFile.sync(cli.flags.file)
-          : labels
+  if (project) {
+    const token = await saveLocal.get('token')
 
-        return gitLabels(cli.input[0], labelList, token)
-          .then(res => {
-            if (res) {
-              return shoutError(`${res.statusCode} — ${res.statusMessage}.`)
-            }
+    if (!token) {
+      return shoutError(
+        `You don't have an access token. Please, create at https://github.com/settings/tokens/new and run ${chalk.bold(
+          '$ git-labels --auth'
+        )}.`
+      )
+    }
 
-            shoutSuccess(
-              `Labels created. Check on https://github.com/${cli
-                .input[0]}/labels`
-            )
-          })
-          .catch(err => err)
-      })
-      .catch(err => shoutError(err))
+    const labels = flags.file ? loadJsonFile.sync(flags.file) : undefined
+
+    try {
+      await gitLabels({ project, labels, token })
+
+      shoutSuccess(
+        `Labels created. Check on https://github.com/${project}/labels`
+      )
+    } catch (error) {
+      shoutError(error)
+    }
   }
 
   cli.showHelp()
