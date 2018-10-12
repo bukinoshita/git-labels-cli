@@ -978,9 +978,9 @@ gh-got@^8.0.1:
   dependencies:
     got "^9.1.0"
 
-git-labels@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/git-labels/-/git-labels-1.0.0.tgz#4beb465df3bb7379c440f38fd495109391b479f5"
+git-labels@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/git-labels/-/git-labels-1.0.1.tgz#7b0f19a9d1b2ee934398ebbfc7f0dff3a7e05e37"
   dependencies:
     gh-got "^8.0.1"
     is-github-repo "^0.0.2"
@@ -1678,11 +1678,7 @@ mimic-fn@^1.0.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/mimic-fn/-/mimic-fn-1.2.0.tgz#820c86a39334640e99516928bd03fca88057d022"
 
-mimic-response@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/mimic-response/-/mimic-response-1.0.0.tgz#df3d3652a73fded6b9b0b24146e6fd052353458e"
-
-mimic-response@^1.0.1:
+mimic-response@^1.0.0, mimic-response@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/mimic-response/-/mimic-response-1.0.1.tgz#4923538878eef42063cb8a3e3b0798781487ab1b"
 

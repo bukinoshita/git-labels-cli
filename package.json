@@ -23,7 +23,7 @@
   ],
   "dependencies": {
     "chalk": "^2.4.1",
-    "git-labels": "^1.0.0",
+    "git-labels": "^1.0.1",
     "inquirer": "^6.2.0",
     "load-json-file": "^5.1.0",
     "meow": "^5.0.0",

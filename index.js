@@ -75,15 +75,15 @@ async function run() {
     try {
       await gitLabels({ project, labels, token })
 
-      shoutSuccess(
+      return shoutSuccess(
         `Labels created. Check on https://github.com/${project}/labels`
       )
     } catch (error) {
-      shoutError(error)
+      return shoutError(error)
     }
-  }
 
-  cli.showHelp()
+    cli.showHelp()
+  }
 }
 
 run()
