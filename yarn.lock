@@ -978,9 +978,10 @@ gh-got@^8.0.1:
   dependencies:
     got "^9.1.0"
 
-git-labels@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/git-labels/-/git-labels-1.0.1.tgz#7b0f19a9d1b2ee934398ebbfc7f0dff3a7e05e37"
+git-labels@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/git-labels/-/git-labels-1.1.1.tgz#86aa9a92af541b54bbba569b21fdd5329020bb7d"
+  integrity sha512-2CzYs+/ZAssYYeAbHruIvw41pTuL9EB/yi1buVMvU+O4cWjTZ5Cop3ahjqBqOPElXAFxBi19kuarTr8sOnGf9g==
   dependencies:
     gh-got "^8.0.1"
     is-github-repo "^0.0.2"
