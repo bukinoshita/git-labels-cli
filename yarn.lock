@@ -573,9 +573,10 @@ eslint-ast-utils@^1.0.0:
     lodash.get "^4.4.2"
     lodash.zip "^4.2.0"
 
-eslint-config-prettier@^3.0.1, eslint-config-prettier@^3.1.0:
+eslint-config-prettier@3.1.0, eslint-config-prettier@^3.0.1:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-3.1.0.tgz#2c26d2cdcfa3a05f0642cd7e6e4ef3316cdabfa2"
+  integrity sha512-QYGfmzuc4q4J6XIhlp8vRKdI/fI0tQfQPy1dME3UOLprE+v4ssH/3W9LM2Q7h5qBcy5m0ehCrBDU2YF8q6OY8w==
   dependencies:
     get-stdin "^6.0.0"
 
@@ -2650,9 +2651,10 @@ xo-init@^0.7.0:
     the-argv "^1.0.0"
     write-pkg "^3.1.0"
 
-xo@^0.23.0:
+xo@0.23.0:
   version "0.23.0"
   resolved "https://registry.yarnpkg.com/xo/-/xo-0.23.0.tgz#dbc709b0e5e38060a497a39d147a173ddd36d355"
+  integrity sha512-jyNZrGULm1oPgL0AMWWFWr3Q2cLsULrIkBsogIGWEUw/wGu47N3XGNmUwB4AvJcMhveNK2gqndY3+z8m0CJFEA==
   dependencies:
     arrify "^1.0.1"
     debug "^3.1.0"
