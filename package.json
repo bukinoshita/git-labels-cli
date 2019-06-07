@@ -33,7 +33,7 @@
     "update-notifier": "^2.5.0"
   },
   "devDependencies": {
-    "eslint-config-prettier": "3.6.0",
+    "eslint-config-prettier": "4.3.0",
     "xo": "0.24.0"
   },
   "xo": {
