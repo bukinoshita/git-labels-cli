@@ -44,6 +44,7 @@ const cli = meow(
 updateNotifier({ pkg: cli.pkg }).notify()
 
 async function run() {
+  await saveLocal.init()
   const { flags, input } = cli
 
   if (flags.auth) {

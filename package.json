@@ -27,7 +27,7 @@
     "inquirer": "^7.0.0",
     "load-json-file": "^6.0.0",
     "meow": "^5.0.0",
-    "save-local": "^0.2.2",
+    "save-local": "^0.2.3",
     "shout-error": "^0.0.2",
     "shout-success": "^0.0.2",
     "update-notifier": "^3.0.0"
