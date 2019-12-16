@@ -30,7 +30,7 @@
     "save-local": "^0.2.3",
     "shout-error": "^0.0.2",
     "shout-success": "^0.0.3",
-    "update-notifier": "^3.0.0"
+    "update-notifier": "^4.0.0"
   },
   "devDependencies": {
     "eslint-config-prettier": "6.7.0",
