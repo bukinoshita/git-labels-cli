@@ -29,7 +29,7 @@
     "meow": "^6.0.0",
     "save-local": "^0.2.3",
     "shout-error": "^0.0.2",
-    "shout-success": "^0.0.3",
+    "shout-success": "^1.0.0",
     "update-notifier": "^4.0.0"
   },
   "devDependencies": {
